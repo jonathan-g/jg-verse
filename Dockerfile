@@ -17,6 +17,9 @@ RUN apt-get update \
     && tlmgr install booktabs mhchem xurl \
     && tlmgr install etoolbox footnotehyper \
     && tlmgr install caption bookmark \
+    && tlmgr install kvoptions pdftexcmds infwarerr \
+    && tlmgr install grffile fvextra fancyvrb lineno ifplatform catchfile \
+    && tlmgr install catchfile xstring framed float epstopdf-pkg \
     && install2.r --error magick \
     && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sh /dev/stdin
 
