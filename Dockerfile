@@ -20,6 +20,6 @@ RUN apt-get update \
     && tlmgr install kvoptions pdftexcmds infwarerr \
     && tlmgr install grffile fvextra fancyvrb lineno ifplatform catchfile \
     && tlmgr install catchfile xstring framed float epstopdf-pkg \
+    && tlmgr install relsize ebgaramond-maths newtx fontspec \
     && install2.r --error magick \
     && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sh /dev/stdin
-
