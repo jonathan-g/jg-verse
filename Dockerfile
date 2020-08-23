@@ -22,6 +22,9 @@ RUN apt-get update \
     && tlmgr install catchfile xstring framed float epstopdf-pkg \
     && tlmgr install relsize ebgaramond-maths newtx fontspec \
     && tlmgr install tufte-latex \
+    && tlmgr install hardwrap titlesec ragged2e ms geometry textcase \
+    && tlmgr install setspace natbib ec fancyhdr units ulem morefloats \
+    && tlmgr install subfig \
     && tlmgr install bera \
     && tlmgr install mathpazo soul \
     && install2.r --error magick \
