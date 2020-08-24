@@ -5,6 +5,8 @@ ENV CTAN_REPO=${CTAN_REPO}
 
 ENV PATH=$PATH:/opt/TinyTeX/bin/x86_64-linux/
 
+COPY scripts/install_pandoc_latest.sh rocker_scripts
+
 RUN apt-get update \
     && apt-get install -y python3 python3-pip imagemagick libmagick-dev xvfb\
     && pip3 install Pygments \
@@ -29,6 +31,6 @@ RUN apt-get update \
     && tlmgr install mathpazo soul \
     && install2.r --error magick \
     && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sh /dev/stdin \
-    && rocker_scripts/install_pandoc.sh
+    && rocker_scripts/install_pandoc_latest.sh
 
 
