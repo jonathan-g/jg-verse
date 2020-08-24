@@ -28,4 +28,7 @@ RUN apt-get update \
     && tlmgr install bera \
     && tlmgr install mathpazo soul \
     && install2.r --error magick \
-    && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sh /dev/stdin
+    && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sh /dev/stdin \
+    && rocker_scripts/install_pandoc.sh
+
+
