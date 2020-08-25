@@ -14,7 +14,8 @@ fi
 
 if [ "$INSTALLED_PANDOC" != "$PANDOC_VERSION" ]; then
       PANDOC_DL_URL=$(wget -qO- https://api.github.com/repos/jgm/pandoc/releases/latest | grep -oP "(?<=\"browser_download_url\":\s\")https.*amd64\.deb")
-    wget ${PANDOC_DL_URL} -O pandoc-amd64.deb
+      wget ${PANDOC_DL_URL} -O pandoc-amd64.deb
+      rm -f $(which pandoc)
     dpkg -i pandoc-amd64.deb
     rm pandoc-amd64.deb
 
