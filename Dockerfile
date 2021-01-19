@@ -33,6 +33,7 @@ RUN apt-get update \
     && tlmgr install bera \
     && tlmgr install mathpazo soul \
     && install2.r --error magick \
+    && install2.r pkgdown \
     && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sh /dev/stdin \
     && rocker_scripts/install_pandoc_latest.sh \
     && Rscript -e "remotes::install_github('jonathan-g/blogdownDigest')"
