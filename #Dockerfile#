@@ -1,4 +1,4 @@
-FROM rocker/verse:4.0.3
+qFROM rocker/verse:4.0.3
 
 ARG CTAN_REPO=${CTAN_REPO:-https://www.texlive.info/tlnet-archive/2019/02/27/tlnet}
 ENV CTAN_REPO=${CTAN_REPO}
@@ -9,8 +9,7 @@ COPY scripts/install_pandoc_latest.sh rocker_scripts
 
 RUN apt-get update \
     && apt-get install -y apt-utils \
-    && apt-get install -y python3 python3-pip xvfb \
-    && apt-get install -y libmagick++-dev \
+    && apt-get install -y python3 python3-pip xvfb libmagick++-dev \
     && apt-get install -y imagemagick \
     && pip3 install Pygments \
     && tlmgr update --self \
@@ -35,4 +34,4 @@ RUN apt-get update \
     && install2.r --error magick \
     && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sh /dev/stdin \
     && rocker_scripts/install_pandoc_latest.sh \
-    && Rscript -e "remotes::install_github('jonathan-g/blogdownDigest')"
+    && rscript -e "remotes::install_github('jonathan-g/blogdownDigest')"
