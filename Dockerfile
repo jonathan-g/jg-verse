@@ -12,6 +12,7 @@ RUN apt-get update \
     && apt-get install -y python3 python3-pip xvfb \
     && apt-get install -y libmagick++-dev \
     && apt-get install -y imagemagick \
+    && apt-get install -y qpdf \
     && pip3 install Pygments \
     && tlmgr update --self \
     && tlmgr update --all \
