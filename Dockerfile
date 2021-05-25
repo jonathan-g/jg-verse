@@ -1,6 +1,6 @@
-FROM rocker/verse:4.0.3
+FROM rocker/verse:4.0.5
 
-ARG CTAN_REPO=${CTAN_REPO:-https://www.texlive.info/tlnet-archive/2019/02/27/tlnet}
+ARG CTAN_REPO=${CTAN_REPO:-https://www.texlive.info/tlnet-archive/2021/03/24/tlnet}
 ENV CTAN_REPO=${CTAN_REPO}
 
 ENV PATH=$PATH:/opt/TinyTeX/bin/x86_64-linux/
@@ -12,9 +12,11 @@ RUN apt-get update \
     && apt-get install -y python3 python3-pip xvfb \
     && apt-get install -y libmagick++-dev \
     && apt-get install -y imagemagick \
+    && apt-get install -y qpdf \
     && pip3 install Pygments \
     && tlmgr update --self \
     && tlmgr update --all \
+    && tlmgr install cm-super ec lm \
     && tlmgr install minted \
     && tlmgr install amsmath \
     && tlmgr install hyperref url \
