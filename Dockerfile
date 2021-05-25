@@ -16,6 +16,7 @@ RUN apt-get update \
     && pip3 install Pygments \
     && tlmgr update --self \
     && tlmgr update --all \
+    && tlmgr install cm-super ec lm \
     && tlmgr install minted \
     && tlmgr install amsmath \
     && tlmgr install hyperref url \
