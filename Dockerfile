@@ -1,6 +1,6 @@
-FROM rocker/verse:4.0.5
+FROM rocker/verse:4.1.0
 
-ARG CTAN_REPO=${CTAN_REPO:-https://www.texlive.info/tlnet-archive/2021/03/24/tlnet}
+ARG CTAN_REPO=${CTAN_REPO:-https://www.texlive.info/tlnet-archive/2021/05/26/tlnet}
 ENV CTAN_REPO=${CTAN_REPO}
 
 ENV PATH=$PATH:/opt/TinyTeX/bin/x86_64-linux/
