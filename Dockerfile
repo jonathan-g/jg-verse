@@ -13,6 +13,7 @@ RUN apt-get update \
     && apt-get install -y libmagick++-dev \
     && apt-get install -y imagemagick \
     && apt-get install -y qpdf \
+    && apt-get install -y libnetcdf-dev \
     && pip3 install Pygments \
     && tlmgr update --self \
     && tlmgr update --all \
@@ -36,6 +37,12 @@ RUN apt-get update \
     && tlmgr install mathpazo soul \
     && install2.r --error magick \
     && install2.r pkgdown \
+    && install2.r ncdf4 \
+    && install2.r raster \
+    && install2.r sf \
+    && install2.r janitor \
+    && install2.r tsibble \
+    && install2.r slider \
     && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sh /dev/stdin \
     && rocker_scripts/install_pandoc_latest.sh \
     && Rscript -e "remotes::install_github('jonathan-g/blogdownDigest')"
