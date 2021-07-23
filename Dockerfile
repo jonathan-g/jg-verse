@@ -14,6 +14,22 @@ RUN apt-get update \
     && apt-get install -y imagemagick \
     && apt-get install -y qpdf \
     && apt-get install -y libnetcdf-dev \
+    && apt-get install -y libproj-dev \
+    && apt-get install -y libgeos-dev \
+    && apt-get install -y libgdal-dev \
+    && apt-get install -y libudunits2-dev \
+    && install2.r -e Rcpp \
+    && install2.r -e -s magick \
+    && install2.r -e -s pkgdown \
+    && install2.r -e -s ncdf4 \
+    && install2.r -e -s raster \
+    && install2.r -e -s units \
+    && install2.r -e -s sf \
+    && install2.r -e -s lwgeom \
+    && install2.r -e -s janitor \
+    && install2.r -e -s tsibble \
+    && install2.r -e -s slider \
+    && install2.r -e -s stars \
     && pip3 install Pygments \
     && tlmgr update --self \
     && tlmgr update --all \
@@ -35,15 +51,6 @@ RUN apt-get update \
     && tlmgr install subfig \
     && tlmgr install bera \
     && tlmgr install mathpazo soul \
-    && install2.r --error magick \
-    && install2.r pkgdown \
-    && install2.r ncdf4 \
-    && install2.r raster \
-    && install2.r sf \
-    && install2.r janitor \
-    && install2.r tsibble \
-    && install2.r slider \
-    && install2.r stars \
     && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sh /dev/stdin \
     && rocker_scripts/install_pandoc_latest.sh \
     && Rscript -e "remotes::install_github('jonathan-g/blogdownDigest')"
