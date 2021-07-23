@@ -43,6 +43,7 @@ RUN apt-get update \
     && install2.r janitor \
     && install2.r tsibble \
     && install2.r slider \
+    && install2.r stars \
     && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sh /dev/stdin \
     && rocker_scripts/install_pandoc_latest.sh \
     && Rscript -e "remotes::install_github('jonathan-g/blogdownDigest')"
