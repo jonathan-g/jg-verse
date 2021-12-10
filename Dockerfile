@@ -1,4 +1,4 @@
-FROM rocker/verse:4.1.0
+FROM rocker/verse:4.1.2
 
 ARG CTAN_REPO=${CTAN_REPO:-https://www.texlive.info/tlnet-archive/2021/05/26/tlnet}
 ENV CTAN_REPO=${CTAN_REPO}
