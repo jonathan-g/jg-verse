@@ -30,6 +30,8 @@ RUN apt-get update \
     && install2.r -e -s tsibble \
     && install2.r -e -s slider \
     && install2.r -e -s stars \
+    && install2.r -e -s RNetCDF \
+    && install2.r -e -s tidync \
     && pip3 install Pygments \
     && tlmgr update --self \
     && tlmgr update --all \
