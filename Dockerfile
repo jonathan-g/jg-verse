@@ -18,6 +18,8 @@ RUN apt-get update \
     && apt-get install -y libgeos-dev \
     && apt-get install -y libgdal-dev \
     && apt-get install -y libudunits2-dev \
+    && apt-get install -y libegl1 \
+    && apt-get install -y libopengl0 \
     && install2.r -e Rcpp \
     && install2.r -e -s magick \
     && install2.r -e -s pkgdown \
