@@ -1,4 +1,4 @@
-FROM rocker/verse:4.2.2
+FROM rocker/verse:4.3.1
 
 ARG CTAN_REPO=${CTAN_REPO:-https://www.texlive.info/tlnet-archive/2022/07/12/tlnet}
 ENV CTAN_REPO=${CTAN_REPO}
@@ -20,6 +20,11 @@ RUN apt-get update \
     && apt-get install -y libudunits2-dev \
     && apt-get install -y libegl1 \
     && apt-get install -y libopengl0 \
+    && apt-get upgrade -y libgl1-mesa-glx \
+    && apt-get upgrade -y libxdamage1 \
+    && apt-get upgrade -y libgl1 \
+    && apt-get upgrade -y libxkbcommon0 \
+    && apt-get upgrade -y libopengl0 \
     && install2.r -e Rcpp \
     && install2.r -e -s magick \
     && install2.r -e -s pkgdown \
