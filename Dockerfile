@@ -7,6 +7,8 @@ ENV PATH=$PATH:/opt/TinyTeX/bin/x86_64-linux/
 
 COPY scripts/install_pandoc_latest.sh rocker_scripts
 
+RUN echo 'options(repos = c(P3M = "https://p3m.dev/cran/__linux__/jammy/latest", CRAN = "https://cloud.r-project.org"))' >> "${R_HOME}/etc/Rprofile.site"
+
 RUN apt-get update \
     && apt-get install -y apt-utils \
     && apt-get install -y python3 python3-pip xvfb \
